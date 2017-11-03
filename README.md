@@ -2,7 +2,7 @@
 
 Yleisiä linkkejä:
 
-* [Linkki sovellukseeni](https://www.cs.helsinki.fi)
+* [Linkki sovellukseeni](http://simokupa.users.cs.helsinki.fi/tsoha/)
 * [Linkki dokumentaatiooni](https://github.com/sweettooth90/Tsoha-Bootstrap/tree/master/doc/dokumentaatio.pdf)
 
 ## Työn aihe
