@@ -3,10 +3,10 @@
 Yleisiä linkkejä:
 
 * [Sovelluksen aloitussivu](http://simokupa.users.cs.helsinki.fi/tsoha/)
-* [Drinkkiarkiston listaussivulle] (http://http://simokupa.users.cs.helsinki.fi/tsoha/drinks)
-* [Drinkkiarkistoon kirjautuminen] (http://http://simokupa.users.cs.helsinki.fi/tsoha/login)
-* [Drinkin tarkastelu] (http://http://simokupa.users.cs.helsinki.fi/tsoha/drinks/1)
-* [Drinkin muokkaus] (http://http://simokupa.users.cs.helsinki.fi/tsoha/drinks/edit)
+* [Drinkkiarkiston listaussivulle] (http://simokupa.users.cs.helsinki.fi/tsoha/drinks)
+* [Drinkkiarkistoon kirjautuminen] (http://simokupa.users.cs.helsinki.fi/tsoha/login)
+* [Drinkin tarkastelu] (http://simokupa.users.cs.helsinki.fi/tsoha/drinks/1)
+* [Drinkin muokkaus] (http://simokupa.users.cs.helsinki.fi/tsoha/drinks/edit)
 * [Dokumentaatio](https://github.com/sweettooth90/Tsoha-Bootstrap/tree/master/doc/dokumentaatio.pdf)
 
 ## Työn aihe
