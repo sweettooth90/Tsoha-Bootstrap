@@ -10,5 +10,6 @@ CREATE TABLE Drinkki(
   käyttäjä_id INTEGER REFERENCES Käyttäjä(id),
   nimi varchar(100) NOT NULL,
   tyyppi varchar(100),
-  ainesosat varchar(500)
+  ainesosat varchar(500),
+  kuvaus varchar(1000)
 );

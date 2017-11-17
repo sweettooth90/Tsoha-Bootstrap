@@ -7,15 +7,15 @@ class DrinkController extends BaseController{
         //haetaan kaikki drinkit tietokannasta
         $drinks = Drinkki::all();
         
-        // Renderöidään views/suunnitelmat kansiossa sijaitseva tiedosto index.html muuttujan $drinks datalla
+        // renderöidään views/drinks kansiossa sijaitseva tiedosto index.html muuttujan $drinks datalla
         View::make('drinks/index.html', array('drinks' => $drinks));
     }
     
      public static function store(){
     // POST-pyynnön muuttujat sijaitsevat $_POST nimisessä assosiaatiolistassa
     $params = $_POST;
-    // Alustetaan uusi Drinkki-luokan olion käyttäjän syöttämillä arvoilla
-    $drinks[] = new Drinkki(array(
+    // alustetaan uusi Drinkki-luokan olion käyttäjän syöttämillä arvoilla
+    $drinks = new Drinkki(array(
         'nimi' => $params['nimi'],
         'tyyppi' => $params['tyyppi'],
         'ainesosat' => $params['ainesosat'],
@@ -27,6 +27,6 @@ class DrinkController extends BaseController{
     $drinks->save();
 
     // Ohjataan käyttäjä lisäyksen jälkeen pelin esittelysivulle
-    Redirect::to('/drinks/' . $drinks->id, array('message' => 'Drinkki lisätty onnistuneesti!'));
+    Redirect::to('/drinks' . $drinks->id, array('message' => 'Drinkki lisätty onnistuneesti!'));
   }
 }

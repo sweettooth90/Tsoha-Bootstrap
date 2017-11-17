@@ -3,7 +3,7 @@
 class Drinkki extends BaseModel {
     
     // attribuutit
-    public $id, $käyttäjä_id, $nimi, $tyyppi, $ainesosat;
+    public $id, $käyttäjä_id, $nimi, $tyyppi, $ainesosat, $kuvaus;
     
     //konstruktori
     public function __construct($attributes) {
@@ -31,7 +31,8 @@ class Drinkki extends BaseModel {
                 'käyttäjä_id' => $row['käyttäjä_id'],
                 'nimi' => $row['nimi'],
                 'tyyppi' => $row['tyyppi'],
-                'ainesosat' => $row['ainesosat']
+                'ainesosat' => $row['ainesosat'],
+                'kuvaus' => $row['kuvaus']
                     ));
         }
         
@@ -51,7 +52,8 @@ class Drinkki extends BaseModel {
                 'käyttäjä_id' => $row['käyttäjä_id'],
                 'nimi' => $row['nimi'],
                 'tyyppi' => $row['tyyppi'],
-                'ainesosat' => $row['ainesosat']
+                'ainesosat' => $row['ainesosat'],
+                'kuvaus' => $row['kuvaus']
             ));
             
             return $drink;
@@ -63,11 +65,9 @@ class Drinkki extends BaseModel {
     
     public function save(){
     $query = DB::connection()->prepare('INSERT INTO Drinkki (nimi, tyyppi, ainesosat, kuvaus) VALUES (:nimi, :tyyppi, :ainesosat, :kuvaus) RETURNING id');
-    $query->execute(array('nimi' => $this->nimi, 'tyyppi' => $this->tyyppi, 'ainesosat' => $this->ainesosat, 'kuvaus' => $this->kuvaus,));
+    $query->execute(array('nimi' => $this->nimi, 'tyyppi' => $this->tyyppi, 'ainesosat' => $this->ainesosat, 'kuvaus' => $this->kuvaus));
     $row = $query->fetch();
     $this->id = $row['id'];
   }
     
 }
-
-?>
