@@ -4,3 +4,4 @@ INSERT INTO Käyttäjä (käyttäjätunnus, salasana) VALUES ('Kalle', 'Kalle123
 INSERT INTO Käyttäjä (käyttäjätunnus, salasana) VALUES ('Henri', 'Henri123');
 -- Drinkki-taulun testidata
 INSERT INTO Drinkki (nimi, tyyppi, ainesosat) VALUES ('Jallukola', 'Juomasekoitus', 'Jaloviina, Coca-Cola');
+INSERT INTO Drinkki (nimi, tyyppi, ainesosat) VALUES ('Rommikola', 'Juomasekoitus', 'Rommi, Coca-Cola');
