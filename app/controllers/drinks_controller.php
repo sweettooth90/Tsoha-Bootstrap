@@ -27,6 +27,12 @@ class DrinkController extends BaseController{
     $drinks->save();
 
     // Ohjataan käyttäjä lisäyksen jälkeen pelin esittelysivulle
-    Redirect::to('/drinks' . $drinks->id, array('message' => 'Drinkki lisätty onnistuneesti!'));
+    Redirect::to('/drinks/' . $drinks->id, array('message' => 'Drinkki lisätty onnistuneesti!'));
+  }
+  
+  public static function show($id){
+      $drinks = Drinkki::find($id);
+      
+    View::make('drinks/drinks_show.html', array('nimi' => $this->nimi, 'tyyppi' => $this->tyyppi, 'ainesosat' => $this->ainesosat, 'kuvaus' => $this->kuvaus));
   }
 }
