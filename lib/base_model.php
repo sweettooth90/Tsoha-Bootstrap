@@ -20,10 +20,46 @@
       $errors = array();
 
       foreach($this->validators as $validator){
-        // Kutsu validointimetodia tässä ja lisää sen palauttamat virheet errors-taulukkoon
+        $errors = array_merge($errors, $this->$validator());
       }
-
       return $errors;
     }
-
+    
+      public function validate_nimi(){
+  $errors = array();
+  if($this->nimi == '' || $this->nimi == null){
+    $errors[] = 'Drinkillä täytyy olla nimi!';
   }
+  if(strlen($this->nimi) < 3){
+    $errors[] = 'Drinkin nimen on oltava > 3 merkkiä';
+  }
+
+  return $errors;
+}
+    
+
+  public function validate_tyyppi(){
+  $errors = array();
+  if($this->tyyppi == '' || $this->tyyppi == null){
+    $errors[] = 'Drinkillä täytyy olla tyyppi!';
+  }
+  if(strlen($this->tyyppi) < 1){
+    $errors[] = 'Drinkin tyypin on oltava > 1 merkkiä';
+  }
+
+  return $errors;
+}
+
+  public function validate_ainesosat(){
+  $errors = array();
+  if($this->ainesosat == '' || $this->ainesosat == null){
+    $errors[] = 'Drinkillä täytyy vähintään yksi ainesosa!';
+  }
+  if(strlen($this->ainesosat) < 3){
+    $errors[] = 'Drinkin ainesosien on oltava > 3 merkkiä';
+  }
+
+  return $errors;
+}
+    
+}

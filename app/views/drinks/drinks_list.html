@@ -1,23 +1,21 @@
 {% extends "base.html" %}
+
+{% block title %}
+Drinkkilista
+{% endblock %}
+
+
 {% block content %}
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>Drinkkiarkisto</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-  <h1>Drinkkiarkisto</h1>
 
   <p>
     <a href="/tsoha/drinks/new" class="btn btn-success">Lisää drinkki</a>
   </p>
+  
+  {% if message %}
+    <div class="alert alert-success">
+    {{message}}
+    </div>
+  {% endif %}
 
   <table class="table table-striped table-bordered">
     <thead>
@@ -30,15 +28,16 @@ and open the template in the editor.
     </thead>
 
     <tbody>
-      <!-- Listataan drinkit tähän -->
+      
+        {% for Drinkki in drinks %}
+        
       <tr>
-        <td><a href="/tsoha/drinks/1">Rommikola</a></td>
-        <td>Juomasekoitus</td>
-        <td>Rommi, Coca-Cola</td>
+      <td><a href="{{base_path}}/drinks/{{Drinkki.id}}">{{Drinkki.nimi}}</a></td>
+      <td>{{Drinkki.tyyppi}}</td>
+      <td>{{Drinkki.ainesosat}}</td>
         <th><a class="btn btn-default btn-sm" href="/tsoha/drinks/edit">Muokkaa</a></th>
       </tr>
+      {% endfor %}
     </tbody>
   </table>
-    </body>
-</html>
 {% endblock %}

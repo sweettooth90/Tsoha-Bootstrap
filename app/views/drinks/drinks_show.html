@@ -1,37 +1,33 @@
 {% extends "base.html" %}
+
+{% block title %}
+Drinkin tiedot
+{% endblock %}
+
 {% block content %}
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
         
-        
-  <h1>Rommikola</h1>
-  <!-- Painikkeet tähän -->
+  <h1>{{Drinkki.nimi}}</h1>
+  {% if message %}
+  <br>
+    <div class="alert alert-success">
+  {{message}}
+    </div>
+{% endif %}
   <p>
-    <button class="btn btn-danger">Poista</button> <a href="/drinks/edit" class="btn btn-default">Muokkaa</a>
+    {{forms.destroy_button("#{base_path}/drinks/#{Drinkki.id}/destroy")}}
+    <a href="{{base_path}}/drinks/edit/{{Drinkki.id}}" class="btn btn-default">Muokkaa</a>
   </p>
   <!-- Tiedot tulee listana tähän -->
  
-      <strong>ID:</strong><br>
-      <strong>Nimi:</strong><br>
-      <strong>Tyyppi:</strong><br>
-      <strong>Ainesosat:</strong><br><br>
-      
-      <strong>Kuvaus:</strong>
-  
-        <p>
-        Rommikola toimii
-        </p>
+  <h3><strong>Nimi:</strong></h3>
+  <p>{{Drinkki.nimi}}</p>
+  <h3><strong>Tyyppi:</strong></h3>
+  <p>{{Drinkki.tyyppi}}</p>
+  <h3><strong>Ainesosat:</strong></h3>
+  <p>{{Drinkki.ainesosat}}</p>
+  <h3><strong>Kuvaus:</strong></h3>
+  <p>{{Drinkki.kuvaus}}</p>
     </body>
 </html>
 {% endblock %}

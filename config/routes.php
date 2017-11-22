@@ -32,12 +32,35 @@
     HelloWorldController::drinks_new();
   });
   
+  $routes->get('/drinks/:id', function($id) {
+    HelloWorldController::drinks_show();
+  });
+  
+  
+ //drinks
+  
   $routes->get('/', function(){
   DrinkController::index();
 });
   
   $routes->get('/drinks', function(){
   DrinkController::index();
+});
+
+  $routes->get('/drinks', function() {
+  DrinkController::listDrinks();
+});
+
+  $routes->get('/drinks/:id/edit', function($id){
+  DrinkController::edit($id);
+});
+
+  $routes->post('/drinks/:id/edit', function($id){
+  DrinkController::update($id);
+});
+
+  $routes->post('/drinks/:id/destroy', function($id){
+  DrinkController::destroy($id);
 });
 
   $routes->post('/drinks', function(){
@@ -52,6 +75,10 @@
   DrinkController::show($id);
 });
 
-  $routes->get('/helloworld', function(){
-  HelloWorldController::helloworld();
+$routes->get('/login', function(){
+  UserController::login();
+});
+
+$routes->post('/login', function(){
+  UserController::handle_login();
 });

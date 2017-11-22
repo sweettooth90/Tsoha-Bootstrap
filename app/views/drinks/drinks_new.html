@@ -15,25 +15,36 @@ and open the template in the editor.
     <body>
   <h1>Lisää drinkki</h1>
 
+  {% if errors %}
+    <div class="alert alert-danger">
+      <ul>
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  
   <form method="post" action="{{base_path}}/drinks">
     <div class="form-group">
       <label>NIMI</label>
-      <input type="text" name="nimi" class="form-control">
+      <input type="text" name="nimi" class="form-control" value="{{attributes.nimi}}">
     </div>
 
     <div class="form-group">
       <label>TYYPPI</label>
-      <input type="text" name="tyyppi" class="form-control">
+      <input type="text" name="tyyppi" class="form-control" value="{{attributes.tyyppi}}">
     </div>
 
     <div class="form-group">
       <label>AINESOSAT</label>
-      <input type="text" name="ainesosat" class="form-control">
+      <input type="text" name="ainesosat" class="form-control" value="{{attributes.ainesosat}}">
     </div>
 
     <div class="form-group">
       <label>KUVAUS</label>
-      <textarea name="kuvaus" class="form-control"></textarea>
+      
+      <textarea name="kuvaus" class="form-control">{{attributes.kuvaus}}</textarea>
     </div>
 
     <div class="form-group">

@@ -9,14 +9,15 @@
     }
 
     public static function sandbox(){
-      $rommikola = Drinkki::find(1);
-      $drinks = Drinkki::all();
-      Kint::dump($drinks);
-      Kint::dump($rommikola);
-      $testikayttaja = Käyttäjä::find(1);
-      $users = Käyttäjä::all();
-      Kint::dump($users);
-      Kint::dump($testikayttaja);
+      $olut = new Drinkki(array(
+        'nimi' => 'd',
+        'tyyppi' => 'a',
+        'ainesosat' => 'a',
+        'kuvaus' => 'a'
+    ));
+      $errors = $olut->errors();
+
+      Kint::dump($errors);
     }
     
     public static function drinks_edit(){

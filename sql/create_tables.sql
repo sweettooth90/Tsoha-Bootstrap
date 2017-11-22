@@ -1,8 +1,8 @@
 -- Lisää CREATE TABLE lauseet tähän tiedostoon
 CREATE TABLE Käyttäjä(
   id SERIAL PRIMARY KEY, -- SERIAL tyyppinen pääavain pitää huolen, että tauluun lisätyllä rivillä on aina uniikki pääavain. Kätevää!
-  käyttäjätunnus varchar(100) NOT NULL, -- Muista erottaa sarakkeiden määrittelyt pilkulla!
-  salasana varchar(100) NOT NULL
+  username varchar(100) NOT NULL, -- Muista erottaa sarakkeiden määrittelyt pilkulla!
+  password varchar(100) NOT NULL
 );
 
 CREATE TABLE Drinkki(

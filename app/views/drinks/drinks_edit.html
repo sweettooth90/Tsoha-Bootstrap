@@ -14,7 +14,11 @@ and open the template in the editor.
     </head>
     <body>
   <h1>Muokkaa drinkkiä</h1>
-
+  
+  <form method="post" action="{{base_path}}/drinks/{{drinks.id}}/destroy" style="display: inline-block;">
+  <button type="submit" class="btn btn-danger">Poista</button>
+</form>
+  <br><br>
   <form>
     <div class="form-group">
       <label>NIMI</label>

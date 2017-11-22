@@ -3,7 +3,7 @@
 class Käyttäjä extends BaseModel {
     
     // attribuutit
-    public $id, $käyttäjätunnus, $salasana;
+    public $id, $username, $password;
     
     //konstruktori
     public function __construct($attributes) {
@@ -28,8 +28,8 @@ class Käyttäjä extends BaseModel {
             //lisätään alkio taulukkoon
             $users[] = new Käyttäjä(array(
                 'id' => $row['id'],
-                'käyttäjätunnus' => $row['käyttäjätunnus'],
-                'salasana' => $row['salasana'],
+                'username' => $row['username'],
+                'password' => $row['password'],
                     ));
         }
         
@@ -46,8 +46,8 @@ class Käyttäjä extends BaseModel {
         if($row) {
             $users[] = new Käyttäjä(array(
                 'id' => $row['id'],
-                'käyttäjätunnus' => $row['käyttäjätunnus'],
-                'salasana' => $row['salasana'],
+                'username' => $row['username'],
+                'password' => $row['password'],
                     ));
             
             return $users;
