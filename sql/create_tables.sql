@@ -5,6 +5,21 @@ CREATE TABLE Käyttäjä(
   password varchar(100) NOT NULL
 );
 
+CREATE TABLE Nimi(
+  id SERIAL PRIMARY KEY,
+  nimi varchar (100) NOT NULL
+);
+
+CREATE TABLE Tyyppi(
+  id SERIAL PRIMARY KEY,
+  tyyppi varchar (100) NOT NULL
+);
+
+CREATE TABLE Ainesosat(
+  id SERIAL PRIMARY KEY,
+  ainesosat varchar (500) NOT NULL
+);
+
 CREATE TABLE Drinkki(
   id SERIAL PRIMARY KEY,
   käyttäjä_id INTEGER REFERENCES Käyttäjä(id),

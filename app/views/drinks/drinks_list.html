@@ -7,6 +7,10 @@ Drinkkilista
 
 {% block content %}
 
+{% if user_logged_in %}
+    <h1>Käyttäjän {{user_logged_in.name}} pelikirjasto</h1>
+  {% endif %}
+
   <p>
     <a href="/tsoha/drinks/new" class="btn btn-success">Lisää drinkki</a>
   </p>
